@@ -1,17 +1,31 @@
-import { useState } from 'react';
-import bgImage from './assets/img/bg.jpg'; // ✅ import the image
-import Docker from './components/partials/Docker';
+import AuthenticatedLayout from './layout/AuthenticatedLayout';
+import GuestLayout from './layout/GuestLayout';
+import Login from './pages/auth/Login';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/home/Home';
 
 function App() {
   return (
-    <div
-      className="min-h-screen bg-center bg-no-repeat bg-cover"
-      style={{
-        backgroundImage: `url(${bgImage})`, // ✅ use imported path
-      }}
-    >
-      <Docker />
-    </div>
+    <Router>
+      <Routes>
+        {/* Index Guest */}
+        <Route
+          path="/"
+          element={
+            <GuestLayout>
+              <Login />
+            </GuestLayout>
+          }
+        />
+
+        {/* Home */}
+        <Route
+          path="/home"
+          element={<Home />}
+        />
+
+      </Routes>
+    </Router>
   );
 }
 
