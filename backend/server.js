@@ -14,12 +14,12 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose
-  .connect(MONGO_URI)
-  .then(() => {
-    console.log("MongoDB connected successfully");
-    app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
-  })
-  .catch((err) => console.error("MongoDB connection error:", err));
+// mongoose
+//   .connect(MONGO_URI)
+//   .then(() => {
+//     console.log("MongoDB connected successfully");
+//     app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+//   })
+//   .catch((err) => console.error("MongoDB connection error:", err));
 
 // route
